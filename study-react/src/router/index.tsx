@@ -1,21 +1,22 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
+import { LayOut } from "../views/layout/LayOut";
+import { Home } from "../views/home/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <details className="dropdown">
-        <summary className="btn m-1">open or close</summary>
-        <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li>
-            <a>Item 2</a>
-          </li>
-        </ul>
-      </details>
-    ),
+    element: <LayOut />,
+    children: [
+      {
+        // 用于重定向到 home page
+        index: true,
+        element: <Navigate to={"/home"} replace />,
+      },
+      {
+        path: "/home",
+        element: <Home />,
+      },
+    ],
   },
 ]);
 
