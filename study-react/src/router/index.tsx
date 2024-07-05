@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { LayOut } from "../views/layout/LayOut";
 import { Home } from "../views/home/Home";
+import { HtmlCode } from "../views/htmlCode/HtmlCode";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
+      },
+      {
+        path: "/htmlCode",
+        element: <HtmlCode />,
       },
     ],
   },

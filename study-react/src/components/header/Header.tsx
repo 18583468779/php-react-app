@@ -1,10 +1,15 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 export const Header: React.FC = () => {
   return (
     <div className="navbar bg-base-100 shadow-lg px-8">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">daisyUI</a>
-        <a className="btn btn-ghost text-xl">H5源码</a>
+        <Link to={"/"} className="btn btn-ghost text-xl">
+          HTML Code
+        </Link>
+        <Link to={"/htmlCode"} className="btn btn-ghost text-xl">
+          H5/DW源码
+        </Link>
         <a className="btn btn-ghost text-xl">系统课程</a>
         <a className="btn btn-ghost text-xl">实战项目</a>
         <a className="btn btn-ghost text-xl">最近更新</a>
